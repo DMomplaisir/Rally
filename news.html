@@ -1,61 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html ng-app = "sampleApp">
+
+<head>
     <meta charset="utf-8">
-    <title>Incoming News</title>
-    <!--- bootstrap code attached --->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Rally: A news platform dedicated to Action </title>
+      <!-- Compiled and minified CSS -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <!--news.css attached to the file -->
-    <link rel="stylesheet" href="/stylesheets/news.css" media="screen" title="no title" charset="utf-8">
-  </head>
-  <body>
-    <div id="wrapper">
+    <link rel="stylesheet" href="stylesheets/news.css" media="screen" title="no title" charset="utf-8">
+</head>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Upcoming events</a>
-                </li>
-                <li>
-                    <a href="#">Hs</a>
-                </li>
-            </ul>
+<body>
+    <!-- nav bar section -->
+      <nav>
+        <ul id = "slide-out" class = "side-nav">
+          <li><div class="userView">
+            <img class = "background" src="assets/images/background.jpg">
+            <a href="#!user"><img class="circle" src="assets/images/aboutme_img.jpg"></a>
+             <a href="#!name"><span class="white-text name">Dylan Momplaisir</span></a>
+             <a href="#!email"><span class="white-text email">momplaisirdylan@gmail.com</span></a>
+         </div></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#News">News</a></li>
+            <li><a href="#local">Local Activism</a></li>
+            <li><a href="#Organizations">Organizaitons</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+       </nav>
+    <header class = "carousel carousel-slider">
+        <div class="hero_image">
+            <!-- Choose 3 articles to have a slideshow to refer to it --->
         </div>
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p></p>
-                    </div>
-                </div>
+        <h1 class="hero_title">Sample Text  by <span class = 'author_name'></span></h1>
+        <h5>A random description of a long and elaborate article which has no possible way to be long.</h5>
+
+    </header>
+    
+</body>
+<!-- <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Rally</h5>
+                <p class="grey-text text-lighten-4">Rally is a news platform dedicated towards bridging the gap between reading an article, and evoking change in our global community.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Local Activisim</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Outreach</a></li>
+                </ul>
+              </div>
             </div>
-        </div>
-  </body>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 Rally
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer> -->
 
-  <!-- script for sekando-->
-  <script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
+<!-- script for sekando-->
+<script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
 
 
-  <script>
+
+
+<script src="scripts/interactive_style.js" charset="utf-8"></script>
+
+<script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyDQ-pLNBp9sv9bOkbdpB7dEWaD-XD9E5sw",
-      authDomain: "rally-37ee6.firebaseapp.com",
-      databaseURL: "https://rally-37ee6.firebaseio.com",
-      storageBucket: "",
+        apiKey: "AIzaSyDQ-pLNBp9sv9bOkbdpB7dEWaD-XD9E5sw",
+        authDomain: "rally-37ee6.firebaseapp.com",
+        databaseURL: "https://rally-37ee6.firebaseio.com",
+        storageBucket: "",
     };
     firebase.initializeApp(config);
     var database = firebase.database();
-  </script>
+</script>
 
-  <script src="scripts/rss_read.js" charset="utf-8"></script>
+<script src="scripts/rss_read.js" charset="utf-8"></script>
+
+<script src="scripts/rss_loadsite.js" charset="utf-8"></script>
+
 </html>
