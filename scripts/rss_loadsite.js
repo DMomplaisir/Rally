@@ -6,7 +6,12 @@ query.once('value')
   .then(function(snapshot){
     snapshot.forEach(function(childSnapshot)
   {
+    var container = document.getElementById("contain");
     var div = document.createElement('div');
+    div.className = ("card teal darken-1");
+    var card_content = document.createElement('div');
+    card_content.className = "card-content white-text";
+
     childSnapshot.forEach(function(secondSnap){
       var text = document.createElement('p');
       var key = secondSnap.key;
@@ -15,17 +20,24 @@ query.once('value')
         var childData = secondSnap.val();
         link_to.href = childData;
         link_to.innerHTML = "Zamn Ma";
-        div.appendChild(link_to);
+        card_content.appendChild(link_to);
       }
+      else if (key == "name") {
+        var name = document.createElement('span');
+        name.className = "card-title";
+        var nameData = secondSnap.val();
+        name.innerHTML = nameData;
+        card_content.appendChild(name);
+        }
       else {
 
         var childData = secondSnap.val();
         text.innerHTML = (childData);
-        div.appendChild(text);
+        card_content.appendChild(text);
 
       }
-
-      document.body.appendChild(div);
+      div.appendChild(card_content);
+      container.appendChild(div);
     });
     // var comment = document.createElement('div');
     // comment.className = "chips chips-placeholder";

@@ -1,15 +1,14 @@
 //refer to styles in js
 
 
-   // jQuery methods go here...
-   $(".button-collapse").sideNav();
-
-      $('.chips').material_chip();
-     $('.chips-placeholder').material_chip({
-      placeholder: 'Enter a tag',
-      secondaryPlaceholder: '+Tag',
-    });
-
-    
+$(function() {
+  $('.slider').slider({full_width: true});
+  $(".button-collapse").sideNav();
+   console.log('zamn');
+   $('.chips-placeholder').material_chip({
+  placeholder: 'Enter a tag',
+  secondaryPlaceholder: '+Tag',
+});
+});
 
 // Initialize collapse button

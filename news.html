@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html ng-app = "sampleApp">
+<html ng-app="sampleApp">
 
 <head>
     <meta charset="utf-8">
     <title>Rally: A news platform dedicated to Action </title>
-      <!-- Compiled and minified CSS -->
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection" />
     <!--news.css attached to the file -->
     <link rel="stylesheet" href="stylesheets/news.css" media="screen" title="no title" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <!-- nav bar section -->
-      <nav>
-        <ul id = "slide-out" class = "side-nav">
-          <li><div class="userView">
-            <img class = "background" src="assets/images/background.jpg">
-            <a href="#!user"><img class="circle" src="assets/images/aboutme_img.jpg"></a>
-             <a href="#!name"><span class="white-text name">Dylan Momplaisir</span></a>
-             <a href="#!email"><span class="white-text email">momplaisirdylan@gmail.com</span></a>
-         </div></li>
+    <nav class="light-blue lighten-1" role="navigation">
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="userView">
+                    <img class="background" src="assets/images/background.jpg">
+                    <a href="#!user"><img class="circle" src="assets/images/aboutme_img.jpg"></a>
+                    <a href="#!name"><span class="white-text name">Dylan Momplaisir</span></a>
+                    <a href="#!email"><span class="white-text email">momplaisirdylan@gmail.com</span></a>
+                </div>
+            </li>
             <li><a href="#home">Home</a></li>
             <li><a href="#News">News</a></li>
             <li><a href="#local">Local Activism</a></li>
@@ -31,43 +35,69 @@
             <li><a href="#aboutus">About Us</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
-         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-       </nav>
-    <header class = "carousel carousel-slider">
-        <div class="hero_image">
-            <!-- Choose 3 articles to have a slideshow to refer to it --->
-        </div>
-        <h1 class="hero_title">Sample Text  by <span class = 'author_name'></span></h1>
-        <h5>A random description of a long and elaborate article which has no possible way to be long.</h5>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+    </nav>
 
-    </header>
-    
-</body>
-<!-- <footer class="page-footer">
-          <div class="container">
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="https://cdn.theatlantic.com/assets/media/img/mt/2016/08/RTSK72K/lead_960.jpg">
+                <!-- random image -->
+
+                    <div class="caption left-align">
+                      <a href="http://www.theatlantic.com/politics/archive/2016/08/the-problem-with-separating-the-homeland-from-the-home/495560/">
+                        <h3 class = "white-text">Terrorism Only Works on Nations That Aren't Ready for It</h3>
+
+                        <h7 class="grey-text text-lighten-3">JULIETTE KAYYEM - Since 9/11, national-security officials have made policy on a myth of American invulnerability. They should have been preparing everyday citizens for the worst in order to make the country stronger.</h7>
+                        </a>
+                        <div class="chips chips-placeholder"></div>
+                    </div>
+
+
+            </li>
+            <li>
+                <img src="http://lorempixel.com/580/250/nature/2">
+                <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div id="contain" class="container">
+
+    </div>
+    <footer class="page-footer">
+        <div class="container">
             <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Rally</h5>
-                <p class="grey-text text-lighten-4">Rally is a news platform dedicated towards bridging the gap between reading an article, and evoking change in our global community.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Local Activisim</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Outreach</a></li>
-                </ul>
-              </div>
+                <div class="col l6 s12">
+                    <h5 class="white-text">Rally</h5>
+                    <p class="grey-text text-lighten-4">Rally is a news platform dedicated towards bridging the gap between reading an article, and evoking change in our global community.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Local Activisim</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Outreach</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="footer-copyright">
+        </div>
+        <div class="footer-copyright">
             <div class="container">
-            © 2016 Rally
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                © 2016 Rally
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
-          </div>
-        </footer> -->
+        </div>
+    </footer>
+
+</body>
 
 <!-- script for sekando-->
 <script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
