@@ -9,7 +9,7 @@ var news_sources = [
     ['The Atlantic', 'http://theatlantic.com/feed/best-of/']
 ];
 
-var guid_list = [];
+var guid_list = [1,];
 //maybe put full article into database depends on how we want to do this
 
 
@@ -23,12 +23,13 @@ var hours = time.getHours();
 
 // if (hours == 9) {
     //goes through all of the news link
-    // for (var i = 0; i < news_sources.length; i++) {
-    //     var news_source = news_sources[i];
-    //     var news_link = news_source[1];
-    //     var new_name = news_source[0];
-    //     updateNews(news_link, new_name);
-    // };
+    for (var i = 0; i < news_sources.length; i++) {
+        var news_source = news_sources[i];
+        var news_link = news_source[1];
+        var new_name = news_source[0];
+        updateNews(news_link, new_name);
+        console.log(guid_list)
+    };
 
 
     // make for loop put all guid into database, acsess numbers
@@ -49,17 +50,18 @@ function updateDatabase(guid, title, snippet, link, news_name) {
 function updateNews(news, new_name) {
     feednami.loadGoogleFormat(news, function(result) {
         if (result.error) {
-            console.log(result.error)
+            console.log(result.error);
         } else {
-            var entries = result.feed.entries
+            var entries = result.feed.entries;
             for (var i = 0; i < entries.length; i++){
-                var entry = entries[i]
-                guid = uniqueID(),
-                title = entry.title,
-                snippet = entry.contentSnippet,
-                link = entry.link,
-
-                updateDatabase(guid, title, snippet, link, new_name)
+                var entry = entries[i];
+                guid = uniqueID();
+                title = entry.title;
+                snippet = entry.contentSnippet;
+                link = entry.link;
+                time_article = entry.publishedDate;
+                guid_list.push(guid);
+                updateDatabase(guid, title, snippet, link, new_name);
             }
 
         }
