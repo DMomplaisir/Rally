@@ -20,17 +20,29 @@ function uniqueID() {
 var time = new Date();
 var hours = time.getHours();
 
+function newsLoad() {
 
-// if (hours == 9) {
-    //goes through all of the news link
-    for (var i = 0; i < news_sources.length; i++) {
-        var news_source = news_sources[i];
-        var news_link = news_source[1];
-        var new_name = news_source[0];
-        updateNews(news_link, new_name);
-        console.log(guid_list)
-    };
+    var now = new Date();
+    var nextHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 1, 0, 0, 0);
+    var difference = nextHour - now;
 
+    window.setTimeout(function(){
+
+      for (var i = 0; i < news_sources.length; i++) {
+          var news_source = news_sources[i];
+          var news_link = news_source[1];
+          var new_name = news_source[0];
+          updateNews(news_link, new_name);
+          console.log(guid_list)
+      };
+
+        console.log("It's a full hour!")
+        callEveryFullHour();
+
+    }, difference);
+}
+
+newsLoad();
 
     // make for loop put all guid into database, acsess numbers
 
@@ -38,7 +50,7 @@ var hours = time.getHours();
 
 // update database with the info
 function updateDatabase(guid, title, snippet, link, news_name) {
-    firebase.database().ref('news/' + guid).set({
+    firebase.database().ref('news/' + title).set({
         name: title,
         snip: snippet,
         link_to: link,
