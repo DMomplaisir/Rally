@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Rally: A news platform dedicated to Action </title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheets/create.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https:/cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection" />
+    <!--news.css attached to the file -->
+
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs  .cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.parallax').parallax();
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
+        });
+    </script>
+    <script src="scripts/create.js" charset="utf-8"></script>
+    <nav class="light-blue lighten-1" role="navigation">
+        <ul id= "slide-out" class="side-nav">
+            <li>
+                <div class="userView">
+                    <img class="background" src="assets/images/background.jpg">
+                    <a href="#!user"><img class="circle" src="assets/images/aboutme_img.jpg"></a>
+                    <a href="#!name"><span class="white-text name">Dylan Momplaisir</span></a>
+                    <a href="#!email"><span class="white-text email">momplaisirdylan@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="local.html">Local Activism</a></li>
+            <li><a href="orgs.html">Organizaitons</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="row">
+            <form class="col s12 card">
+              <div class ="row">
+                <div class = "col s6">
+                <h2>Submit an event</h2>
+              </div>
+              </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">event</i>
+                        <input placeholder="Event Name" id="event_name" type="text" class="validate">
+
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input id="date" type="date" class="datepicker">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">location_on</i>
+                        <input id="location" type="text" class="validate" placeholder="Location">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">Details</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>File</span>
+                                <input type="file" id = "file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" placeholder="Image" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                  <div class = "col s6">
+                    <a class = "waves-effect waves-light btn" id = "submit"> SUBMIT</a>
+                  </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDQ-pLNBp9sv9bOkbdpB7dEWaD-XD9E5sw",
+            authDomain: "rally-37ee6.firebaseapp.com",
+            databaseURL: "https://rally-37ee6.firebaseio.com",
+            storageBucket: "rally-37ee6.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+</body>
+
+
+</html>

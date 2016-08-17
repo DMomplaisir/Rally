@@ -20,29 +20,21 @@ function uniqueID() {
 var time = new Date();
 var hours = time.getHours();
 
-function newsLoad() {
+if  (hours < 1) {
 
-    var now = new Date();
-    var nextHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 1, 0, 0, 0);
-    var difference = nextHour - now;
-
-    window.setTimeout(function(){
-
-      for (var i = 0; i < news_sources.length; i++) {
-          var news_source = news_sources[i];
-          var news_link = news_source[1];
-          var new_name = news_source[0];
-          updateNews(news_link, new_name);
-          console.log(guid_list)
-      };
-
-        console.log("It's a full hour!")
-        callEveryFullHour();
-
-    }, difference);
+    for (var i = 0; i < news_sources.length; i++) {
+      var news_source = news_sources[i];
+      console.log(news_source);
+      var news_link = news_source[1];
+      console.log(news_link);
+      var new_name = news_source[0];
+      updateNews(news_link, new_name);
+      console.log(guid_list);
+    }
 }
-
-newsLoad();
+else {
+  console.log("Good didn't load a new site");
+}
 
     // make for loop put all guid into database, acsess numbers
 
@@ -53,8 +45,8 @@ function updateDatabase(guid, title, snippet, link, news_name) {
     firebase.database().ref('news/' + title).set({
         name: title,
         snip: snippet,
-        link_to: link,
-    })
+        link_to: link
+    });
 };
 
 

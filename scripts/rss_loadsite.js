@@ -1,7 +1,7 @@
 //this program will load each ting from database, and dynamically upload
 
 
-var query = firebase.database().ref("news/").orderByKey().limitToFirst(30);
+var query = firebase.database().ref("news/").orderByKey().limitToLast(35);
 counter = 0;
 query.once('value')
     .then(function(snapshot) {
