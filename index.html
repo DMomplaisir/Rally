@@ -7,7 +7,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" href="stylesheets/index.css" media="screen" title="no title" charset="utf-8">
-    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src= "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"> </script>
     <script type="text/javascript">
 
@@ -19,6 +19,15 @@
     <script src="scripts/index.js" charset="utf-8"></script>
 
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script type="text/javascript">
+    var config = {
+      apiKey: "AIzaSyDQ-pLNBp9sv9bOkbdpB7dEWaD-XD9E5sw",
+      authDomain: "rally-37ee6.firebaseapp.com",
+      databaseURL: "https://rally-37ee6.firebaseio.com",
+      storageBucket: "rally-37ee6.appspot.com",
+    };
+    firebase.initializeApp(config);
+    </script>
 
 
   </head>
@@ -34,9 +43,9 @@
                       <a href="#!email"><span class="white-text email">momplaisirdylan@gmail.com</span></a>
                   </div>
               </li>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#News">News</a></li>
-              <li><a href="#local">Local Activism</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="local.html">Local Activism</a></li>
               <li><a href="orgs.html">Organizaitons</a></li>
               <li><a href="#aboutus">About Us</a></li>
               <li><a href="#contact">Contact Us</a></li>
@@ -47,39 +56,42 @@
         <div class = 'container' id="holder" >
           <img src = "" class = "responsive-img"/>
           <h1 class = "white-text"> A platform dedicated towards bridging the gap between learning about the world, and changing it.</h1>
-          <a class="waves-effect waves-light btn" onclick="signUp()"><i class="material-icons left">input</i>Sign Up</a>
-          <!-- <div class="row"> -->
-   <!-- <form class="col s12">
-     <div class="row">
-       <div class="input-field col s6">
-         <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-         <label for="first_name">First Name</label>
-       </div>
-       <div class="input-field col s6">
-         <input id="last_name" type="text" class="validate">
-         <label for="last_name">Last Name</label>
-       </div>
-     </div>
-
-     <div class="row">
-       <div class="input-field col s12">
-         <input id="password" type="password" class="validate">
-         <label for="password">Password</label>
-       </div>
-     </div>
-     <div class="row">
-       <div class="input-field col s12">
-         <input id="email" type="email" class="validate">
-         <label for="email">Email</label>
-       </div>
-     </div>
-   </form>
- </div> -->
-
+          <a class="waves-effect waves-light btn" id="sign"><i class="material-icons left">input</i>Sign Up</a>
 
           <a class="waves-effect waves-light btn" onclick="logIn()()"><i class="material-icons left">launch</i>Log In</a>
         </div>
-      </div>
+
+
+        <div class="row" id = "register">
+         <form class="col card container">
+           <div class="row">
+             <div class="input-field col s6">
+               <i class="material-icons prefix">account_circle</i>
+               <input placeholder="First Name" id="first_name" type="text" class="validate">
+               <label for="first_name">First Name</label>
+             </div>
+             <div class="input-field col s6">
+               <input id="last_name" type="text" class="validate">
+               <label for="last_name">Last Name</label>
+             </div>
+           </div>
+
+           <div class="row">
+             <div class="input-field col s12">
+               <input id="password" type="password" class="validate">
+               <label for="password">Password</label>
+             </div>
+           </div>
+           <div class="row">
+             <div class="input-field col s12">
+               <input id="email" type="email" class="validate">
+               <label for="email">Email</label>
+             </div>
+          <a class="waves-effect waves-light btn" id="signupbutton">SIGN UP</a>
+           </div>
+         </form>
+       </div>
+</div>
   </div>
   </body>
 </html>
